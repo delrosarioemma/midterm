@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form</title>
+
+    <style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 35px 25px;
+        background-color: #FFF7FA;
+        color: #3A2630;
+        font-family: "Times New Roman", serif;
+        line-height: 1.5;
+    }
+
+
+    /* MAIN TITLE */
+
+    h1 {
+        text-align: center;
+        margin: 0 0 8px;
+        color: #C45A7A;
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    #form > p {
+        text-align: center;
+        margin: 0 0 35px;
+        color: #3A2630;
+        font-size: 17px;
+    }
+
+
+    /* SECTION HEADINGS */
+
+    h2 {
+        margin-top: 35px;
+        margin-bottom: 18px;
+        padding: 9px 14px;
+        color: #FFF7FA;
+        background-color: #C45A7A;
+        border-radius: 6px;
+        font-size: 19px;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* LABELS */
+
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 6px;
+        color: #3A2630;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+
+    /* INPUTS */
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        max-width: 600px;
+        padding: 10px 12px;
+        background-color: #FFF7FA;
+        color: #3A2630;
+        border: 1.5px solid #C45A7A;
+        border-radius: 6px;
+        font-family: "Times New Roman", serif;
+        font-size: 15px;
+        outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border: 2px solid #C45A7A;
+    }
+
+    textarea {
+        height: 80px;
+        resize: vertical;
+    }
+
+
+    /* BUTTONS */
+
+    button {
+        margin-top: 25px;
+        margin-right: 8px;
+        padding: 11px 18px;
+        background-color: #C45A7A;
+        color: #FFF7FA;
+        border: 2px solid #C45A7A;
+        border-radius: 6px;
+        font-family: "Times New Roman", serif;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3A2630;
+        border-color: #3A2630;
+    }
+
+
+    /* STUDENT RECORD */
+
+    #record {
+        display: none;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+
+    /* TABLE */
+
+    table {
+        width: 100%;
+        margin-bottom: 25px;
+        border-collapse: collapse;
+        color: #3A2630;
+    }
+
+    table,
+    th,
+    td {
+        border: 1.5px solid #C45A7A;
+    }
+
+    th,
+    td {
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    th[colspan="4"] {
+        background-color: #C45A7A;
+        color: #FFF7FA;
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        body {
+            padding: 20px 12px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        h2 {
+            font-size: 17px;
+        }
+
+        input,
+        select,
+        textarea {
+            max-width: 100%;
+        }
+
+        button {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        table {
+            font-size: 13px;
+        }
+
+        th,
+        td {
+            padding: 7px;
+        }
+    }
+
+
+    /* PRINT */
+
+    @media print {
+
+        body {
+            padding: 0;
+            background-color: #FFF7FA;
+            color: #3A2630;
+        }
+
+        #form {
+            display: none;
+        }
+
+        #record {
+            display: block;
+        }
+
+        th[colspan="4"] {
+            background-color: #FFF7FA;
+            color: #3A2630;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #3A2630;
+        }
+
+        button {
+            display: none;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div id="form">
+
+    <h1>LIPA CITY COLLEGES STUDENT FORM</h1>
+
+    <p style="text-align:center;">
+        Your journey begins with us.
+    </p>
+
+
+    <h2>I. Personal Information</h2>
+
+    <label>College Department</label>
+    <input type="text" id="collegeDepartment">
+
+    <label>Student Number</label>
+    <input type="text" id="studentNumber">
+
+    <label>LRN</label>
+    <input type="text" id="lrn">
+
+    <label>Last Name</label>
+    <input type="text" id="lastName">
+
+    <label>First Name</label>
+    <input type="text" id="firstName">
+
+    <label>Middle Name</label>
+    <input type="text" id="middleName">
+
+    <label>Suffix</label>
+    <input type="text" id="suffix">
+
+    <label>Preferred Name</label>
+    <input type="text" id="prefferedName">
+
+    <label>Birth Date</label>
+    <input type="date" id="birthDate">
+
+    <label>Age</label>
+    <input type="number" id="age">
+
+    <label>Sex</label>
+    <select id="sex">
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+    <label>Civil Status</label>
+    <select id="civilStatus">
+        <option value="">Select</option>
+        <option>Single</option>
+        <option>Married</option>
+        <option>Widowed</option>
+    </select>
+
+    <label>Place of Birth</label>
+    <input type="text" id="birthPlace">
+
+    <label>Nationality</label>
+    <input type="text" id="nationality">
+
+    <label>Religion</label>
+    <input type="text" id="religion">
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <h2>II. Contact Information</h2>
+
+    <label>Mobile Number</label>
+    <input type="text" id="mobile" maxlength="11" pattern="[0-9]{11}" inputmode="numeric">
+
+    <label>Email Address</label>
+    <input type="email" id="email">
+
+    <label>Complete Home Address</label>
+    <textarea id="address"></textarea>
+
+    <label>Barangay</label>
+    <input type="text" id="barangay">
+
+    <label>City / Municipality</label>
+    <input type="text" id="city">
+
+    <label>Province</label>
+    <input type="text" id="province">
+
+    <label>ZIP Code</label>
+    <input type="text" id="zip" maxlength="4" pattern="[0-9]{4}" inputmode="numeric">
+
+
+    <h2>III. Academic Information</h2>
+
+    <label>Course / Program</label>
+    <select id="course">
+        <option value="">Select Program</option>
+        <option>BS Computer Science</option>
+        <option>BS Information Technology</option>
+        <option>BS Computer Engineering</option>
+    </select>
+
+    <label>Year Level</label>
+    <select id="yearLevel">
+        <option value="">Select</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+    </select>
+
+    <label>Section</label>
+    <input type="text" id="section">
+
+    <label>School Year</label>
+    <input type="text" id="schoolYear">
+
+    <label>Semester</label>
+    <select id="semester">
+        <option value="">Select</option>
+        <option>First Semester</option>
+        <option>Second Semester</option>
+        <option>Summer</option>
+    </select>
+
+    <label>Student Status</label>
+    <select id="studentStatus">
+        <option value="">Select</option>
+        <option>New Student</option>
+        <option>Regular Student</option>
+        <option>Irregular Student</option>
+        <option>Transferee</option>
+        <option>Returning Student</option>
+    </select>
+
+    <label>Study Abroad Preference</label>
+    <select id="studyAbroad">
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
+    <label>Certification</label>
+    <input type="text" id="Certification"
+    
+    <br>
+
+    <h2>IV. Previous School Information</h2>
+
+    <label>Name of Previous School</label>
+    <input type="text" id="previousSchool">
+
+    <label>Previous School Address</label>
+    <textarea id="previousAddress"></textarea>
+
+    <label>Year Graduated</label>
+    <input type="text" id="yearGraduated">
+
+    <label>General Average</label>
+    <input type="text" id="generalAverage">
+
+
+    <h2>V. Parent / Guardian Information</h2>
+
+    <label>Father's Full Name</label>
+    <input type="text" id="fatherName">
+
+    <label>Father's Occupation</label>
+    <input type="text" id="fatherOccupation">
+
+    <label>Father's Contact Number</label>
+    <input type="text" id="fatherContact">
+
+    <label>Mother's Full Name</label>
+    <input type="text" id="motherName">
+
+    <label>Mother's Occupation</label>
+    <input type="text" id="motherOccupation">
+
+    <label>Mother's Contact Number</label>
+    <input type="text" id="motherContact">
+
+    <label>Guardian's Name</label>
+    <input type="text" id="guardianName">
+
+    <label>Relationship</label>
+    <input type="text" id="relationship">
+
+    <label>Guardian Contact Number</label>
+    <input type="text" id="guardianContact">
+
+
+    <h2>VI. Emergency Contact Information</h2>
+
+    <label>Emergency Contact Person</label>
+    <input type="text" id="emergencyName">
+
+    <label>Relationship</label>
+    <input type="text" id="emergencyRelationship">
+
+    <label>Contact Number</label>
+    <input type="text" id="emergencyContact">
+
+    <label>Alternative Contact Number</label>
+    <input type="text" id="alternativeContact">
+
+    <label>Emergency Contact Address</label>
+    <textarea id="emergencyAddress"></textarea>
+
+
+    <!-- HEALTH -->
+
+    <h2>VII. Basic Health Information</h2>
+
+    <label>Blood Type</label>
+    <select id="bloodType">
+        <option value="">Select</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>Unknown</option>
+    </select>
+
+    <label>Height</label>
+    <input type="text" id="height">
+
+    <label>Weight</label>
+    <input type="text" id="weight">
+
+    <label>Allergies</label>
+    <textarea id="allergies"></textarea>
+
+    <label>Medical Conditions / Important Health Information</label>
+    <textarea id="medical"></textarea>
+
+ 
+
+    <h2>VIII. Student Background</h2>
+
+    <label>Hobbies / Interests</label>
+    <textarea id="hobbies"></textarea>
+
+    <label>Skills / Talents</label>
+    <textarea id="skills"></textarea>
+
+    <label>Organizations / Clubs</label>
+    <textarea id="organizations"></textarea>
+
+    <label>Scholarship</label>
+    <input type="text" id="scholarship">
+
+    <br>
+
+    <h2>IX. Job Preference</h2>
+    <label>Company Preference</label>
+    <textarea id="company"></textarea>
+
+    <label>Job</label>
+    <textarea id="job"></textarea>
+
+    <label>Work Abroad</label>
+    <select id="workAbroad">
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+
+    <br>
+
+    <button onclick="viewRecord()">View Student Record</button>
+    <button onclick="printInformation()">Print Information</button>
+    <button onclick="clearForm()">Clear Form</button>
+
+    
+
+
+</div>
+
+
+<div id="record">
+
+    <h1>STUDENT INFORMATION RECORD</h1>
+
+    <table>
+
+        <tr>
+            <th colspan="4">I. PERSONAL INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>Student Number</th>
+            <td id="rStudentNumber"></td>
+
+            <th>LRN</th>
+            <td id="rLrn"></td>
+        </tr>
+
+        <tr>
+            <th>Full Name</th>
+            <td colspan="3" id="rName"></td>
+        </tr>
+
+        <tr>
+            <th>Birth Date</th>
+            <td id="rBirthDate"></td>
+
+            <th>Age</th>
+            <td id="rAge"></td>
+        </tr>
+
+        <tr>
+            <th>Sex</th>
+            <td id="rSex"></td>
+
+            <th>Civil Status</th>
+            <td id="rCivilStatus"></td>
+        </tr>
+
+        <tr>
+            <th>Place of Birth</th>
+            <td colspan="3" id="rBirthPlace"></td>
+        </tr>
+
+        <tr>
+            <th>Nationality</th>
+            <td id="rNationality"></td>
+
+            <th>Religion</th>
+            <td id="rReligion"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">II. CONTACT INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>Mobile Number</th>
+            <td id="rMobile"></td>
+
+            <th>Email</th>
+            <td id="rEmail"></td>
+        </tr>
+
+        <tr>
+            <th>Address</th>
+            <td colspan="3" id="rAddress"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">III. ACADEMIC INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>Program</th>
+            <td id="rCourse"></td>
+
+            <th>Year Level</th>
+            <td id="rYear"></td>
+        </tr>
+
+        <tr>
+            <th>Section</th>
+            <td id="rSection"></td>
+
+            <th>Status</th>
+            <td id="rStatus"></td>
+
+            <th>Certification</th>
+            <td id="rCertification"></td>
+        </tr>
+
+
+        <tr>
+            <th>School Year</th>
+            <td id="rSchoolYear"></td>
+
+            <th>Semester</th>
+            <td id="rSemester"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">IV. PREVIOUS SCHOOL INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>School</th>
+            <td colspan="3" id="rPreviousSchool"></td>
+        </tr>
+
+        <tr>
+            <th>Address</th>
+            <td colspan="3" id="rPreviousAddress"></td>
+        </tr>
+
+        <tr>
+            <th>Year Graduated</th>
+            <td id="rYearGraduated"></td>
+
+            <th>General Average</th>
+            <td id="rAverage"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">V. PARENT / GUARDIAN INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>Father</th>
+            <td id="rFather"></td>
+
+            <th>Contact</th>
+            <td id="rFatherContact"></td>
+        </tr>
+
+        <tr>
+            <th>Mother</th>
+            <td id="rMother"></td>
+
+            <th>Contact</th>
+            <td id="rMotherContact"></td>
+        </tr>
+
+        <tr>
+            <th>Guardian</th>
+            <td id="rGuardian"></td>
+
+            <th>Contact</th>
+            <td id="rGuardianContact"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">VI. EMERGENCY CONTACT</th>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <td id="rEmergency"></td>
+
+            <th>Relationship</th>
+            <td id="rEmergencyRelationship"></td>
+        </tr>
+
+        <tr>
+            <th>Contact</th>
+            <td id="rEmergencyContact"></td>
+
+            <th>Alternative Contact</th>
+            <td id="rAlternative"></td>
+        </tr>
+
+        <tr>
+            <th>Address</th>
+            <td colspan="3" id="rEmergencyAddress"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">VII. BASIC HEALTH INFORMATION</th>
+        </tr>
+
+        <tr>
+            <th>Blood Type</th>
+            <td id="rBlood"></td>
+
+            <th>Height / Weight</th>
+            <td id="rHeightWeight"></td>
+        </tr>
+
+        <tr>
+            <th>Allergies</th>
+            <td colspan="3" id="rAllergies"></td>
+        </tr>
+
+        <tr>
+            <th>Medical Information</th>
+            <td colspan="3" id="rMedical"></td>
+        </tr>
+
+    </table>
+
+
+    <table>
+
+        <tr>
+            <th colspan="4">VIII. STUDENT BACKGROUND</th>
+        </tr>
+
+        <tr>
+            <th>Hobbies</th>
+            <td colspan="3" id="rHobbies"></td>
+        </tr>
+
+        <tr>
+            <th>Skills</th>
+            <td colspan="3" id="rSkills"></td>
+        </tr>
+
+        <tr>
+            <th>Organizations</th>
+            <td colspan="3" id="rOrganizations"></td>
+        </tr>
+
+        <tr>
+            <th>Scholarship</th>
+            <td colspan="3" id="rScholarship"></td>
+        </tr>
+
+    </table>
+
+     <table>
+
+        <tr>
+            <th colspan="4">IX. Job Preference</th>
+        </tr>
+
+        <tr>
+            <th>Company Preferrence</th>
+            <td colspan="3" id="rCompany"></td>
+        </tr>
+
+        <tr>
+            <th>Job</th>
+            <td colspan="3" id="rJob"></td>
+        </tr>
+
+        <tr>
+            <th>Work Abroad</th>
+            <td colspan="3" id="rworkAbroad"></td>
+        </tr>
+
+
+    </table>
+
+    <br><br>
+
+    ______________________________
+    <br>
+    Student Signature
+
+    <br><br><br>
+
+    ______________________________
+    <br>
+    Parent / Guardian Signature
+
+    <br><br>
+
+    <button onclick="window.print()">Print</button>
+
+</div>
+
+
+<script>
+
+function viewRecord() {
+
+    alert("Are you sure everything is correct?")
+
+    // Personal Information
+
+    document.getElementById("rStudentNumber").innerHTML =
+    document.getElementById("studentNumber").value;
+
+    document.getElementById("rLrn").innerHTML =
+    document.getElementById("lrn").value;
+
+    document.getElementById("rName").innerHTML =
+    document.getElementById("lastName").value + ", " +
+    document.getElementById("firstName").value + " " +
+    document.getElementById("middleName").value + " " +
+    document.getElementById("suffix").value;
+    document.getElementById("prefferedName").value;
+
+    document.getElementById("rBirthDate").innerHTML =
+    document.getElementById("birthDate").value;
+
+    document.getElementById("rAge").innerHTML =
+    document.getElementById("age").value;
+
+    document.getElementById("rSex").innerHTML =
+    document.getElementById("sex").value;
+
+    document.getElementById("rCivilStatus").innerHTML =
+    document.getElementById("civilStatus").value;
+
+    document.getElementById("rBirthPlace").innerHTML =
+    document.getElementById("birthPlace").value;
+
+    document.getElementById("rNationality").innerHTML =
+    document.getElementById("nationality").value;
+
+    document.getElementById("rReligion").innerHTML =
+    document.getElementById("religion").value;
+
+
+    // Contact
+
+    document.getElementById("rMobile").innerHTML =
+    document.getElementById("mobile").value;
+
+    document.getElementById("rEmail").innerHTML =
+    document.getElementById("email").value;
+
+    document.getElementById("rAddress").innerHTML =
+    document.getElementById("address").value + ", " +
+    document.getElementById("barangay").value + ", " +
+    document.getElementById("city").value + ", " +
+    document.getElementById("province").value + " " +
+    document.getElementById("zip").value;
+
+
+    // Academic
+
+    document.getElementById("rCourse").innerHTML =
+    document.getElementById("course").value;
+
+    document.getElementById("rYear").innerHTML =
+    document.getElementById("yearLevel").value;
+
+    document.getElementById("rSection").innerHTML =
+    document.getElementById("section").value;
+
+    document.getElementById("rStatus").innerHTML =
+    document.getElementById("studentStatus").value;
+    document.getElementById("studyAbroad").value;
+    document.getElementById("rCertification").value;
+
+
+    document.getElementById("rSchoolYear").innerHTML =
+    document.getElementById("schoolYear").value;
+
+    document.getElementById("rSemester").innerHTML =
+    document.getElementById("semester").value;
+
+
+    // Previous School
+
+    document.getElementById("rPreviousSchool").innerHTML =
+    document.getElementById("previousSchool").value;
+
+    document.getElementById("rPreviousAddress").innerHTML =
+    document.getElementById("previousAddress").value;
+
+    document.getElementById("rYearGraduated").innerHTML =
+    document.getElementById("yearGraduated").value;
+
+    document.getElementById("rAverage").innerHTML =
+    document.getElementById("generalAverage").value;
+
+
+    // Parent / Guardian
+
+    document.getElementById("rFather").innerHTML =
+    document.getElementById("fatherName").value + " - " +
+    document.getElementById("fatherOccupation").value;
+
+    document.getElementById("rFatherContact").innerHTML =
+    document.getElementById("fatherContact").value;
+
+    document.getElementById("rMother").innerHTML =
+    document.getElementById("motherName").value + " - " +
+    document.getElementById("motherOccupation").value;
+
+    document.getElementById("rMotherContact").innerHTML =
+    document.getElementById("motherContact").value;
+
+    document.getElementById("rGuardian").innerHTML =
+    document.getElementById("guardianName").value + " - " +
+    document.getElementById("relationship").value;
+
+    document.getElementById("rGuardianContact").innerHTML =
+    document.getElementById("guardianContact").value;
+
+
+    // Emergency Contact
+
+    document.getElementById("rEmergency").innerHTML =
+    document.getElementById("emergencyName").value;
+
+    document.getElementById("rEmergencyRelationship").innerHTML =
+    document.getElementById("emergencyRelationship").value;
+
+    document.getElementById("rEmergencyContact").innerHTML =
+    document.getElementById("emergencyContact").value;
+
+    document.getElementById("rAlternative").innerHTML =
+    document.getElementById("alternativeContact").value;
+
+    document.getElementById("rEmergencyAddress").innerHTML =
+    document.getElementById("emergencyAddress").value;
+
+
+    // Health Information
+
+    document.getElementById("rBlood").innerHTML =
+    document.getElementById("bloodType").value;
+
+    document.getElementById("rHeightWeight").innerHTML =
+    document.getElementById("height").value + " / " +
+    document.getElementById("weight").value;
+
+    document.getElementById("rAllergies").innerHTML =
+    document.getElementById("allergies").value;
+
+    document.getElementById("rMedical").innerHTML =
+    document.getElementById("medical").value;
+
+
+    // Student Background
+
+    document.getElementById("rHobbies").innerHTML =
+    document.getElementById("hobbies").value;
+
+    document.getElementById("rSkills").innerHTML =
+    document.getElementById("skills").value;
+
+    document.getElementById("rOrganizations").innerHTML =
+    document.getElementById("organizations").value;
+
+    document.getElementById("rScholarship").innerHTML =
+    document.getElementById("scholarship").value;
+
+    document.getElementById("rCompany").innerHTML =
+    document.getElementById("company").value;    
+
+    document.getElementById("rJob").innerHTML =
+    document.getElementById("job").value;   
+
+    document.getElementById("rworkAbroad").innerHTML =
+    document.getElementById("workAbroad").value;
+
+    document.getElementById("record").style.display = "block";
+
+    document.getElementById("record").scrollIntoView();
+}
+
+
+function printInformation() {
+
+    window.print();
+
+}
+
+
+function clearForm() {
+
+
+    document.getElementById("studentNumber").value = "";
+    document.getElementById("lrn").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("firstName").value = "";
+    document.getElementById("middleName").value = "";
+    document.getElementById("suffix").value = "";
+    document.getElementById("prefferedName").value = "";
+    document.getElementById("birthDate").value = "";
+    document.getElementById("age").value = "";
+    document.getElementById("sex").value = "";
+    document.getElementById("civilStatus").value = "";
+    document.getElementById("birthPlace").value = "";
+    document.getElementById("nationality").value = "";
+    document.getElementById("religion").value = "";
+
+    document.getElementById("mobile").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("barangay").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("province").value = "";
+    document.getElementById("zip").value = "";
+
+    document.getElementById("course").value = "";
+    document.getElementById("yearLevel").value = "";
+    document.getElementById("section").value = "";
+    document.getElementById("schoolYear").value = "";
+    document.getElementById("semester").value = "";
+    document.getElementById("studentStatus").value = "";
+    document.getElementById("studyAbroad").value = "";
+
+    document.getElementById("previousSchool").value = "";
+    document.getElementById("previousAddress").value = "";
+    document.getElementById("yearGraduated").value = "";
+    document.getElementById("generalAverage").value = "";
+
+    document.getElementById("fatherName").value = "";
+    document.getElementById("fatherOccupation").value = "";
+    document.getElementById("fatherContact").value = "";
+
+    document.getElementById("motherName").value = "";
+    document.getElementById("motherOccupation").value = "";
+    document.getElementById("motherContact").value = "";
+
+    document.getElementById("guardianName").value = "";
+    document.getElementById("relationship").value = "";
+    document.getElementById("guardianContact").value = "";
+
+    document.getElementById("emergencyName").value = "";
+    document.getElementById("emergencyRelationship").value = "";
+    document.getElementById("emergencyContact").value = "";
+    document.getElementById("alternativeContact").value = "";
+    document.getElementById("emergencyAddress").value = "";
+
+    document.getElementById("bloodType").value = "";
+    document.getElementById("height").value = "";
+    document.getElementById("weight").value = "";
+    document.getElementById("allergies").value = "";
+    document.getElementById("medical").value = "";
+
+    document.getElementById("hobbies").value = "";
+    document.getElementById("skills").value = "";
+    document.getElementById("organizations").value = "";
+    document.getElementById("scholarship").value = "";
+
+    document.getElementById("company").value = "";
+    document.getElementById("job").value = "";
+    document.getElementById("workAbroad").value = "";
+    
+
+    document.getElementById("record").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
